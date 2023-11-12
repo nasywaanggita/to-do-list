@@ -32,7 +32,7 @@ class HomePage extends StatelessWidget {
             style: TextStyle(fontSize: 12, color: Colors.grey),
           ),
           subtitle: const Text(
-            'Kelompok 3', // Add your subtitle text
+            'Kelompok 3',
             style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
           ),
         ),
