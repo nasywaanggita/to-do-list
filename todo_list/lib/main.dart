@@ -28,7 +28,7 @@ class HomePage extends StatelessWidget {
           leading: CircleAvatar(
             backgroundColor: Colors.amber.shade200,
             radius: 25,
-            child: Image.asset('./assets/profil.png'),
+            child: Image.asset('>assets/profil.png'),
           ),
           title: const Text(
             'Hello, We Are',
