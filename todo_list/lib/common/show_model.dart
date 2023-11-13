@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:todo_list/constants/app_style.dart';
+import 'package:todo_list/widget/date_time_widget.dart';
 import 'package:todo_list/widget/radio_widget.dart';
 import 'package:todo_list/widget/textfield_widget.dart';
 
@@ -70,25 +71,55 @@ class AddNewTaskModel extends StatelessWidget {
           //Date time Section
 
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text('Date', style: AppStyle.headingOne),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.grey.shade200,
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Row(children: const [
-                          Icon(CupertinoIcons.calendar),
-                          Gap(12),
-                          Text('dd/mm/yy'),
-                        ]),
-                      ),
-                    ]),
-              )
+              DateTimeWidget(
+                  titleText: 'Date',
+                  valueText: 'dd//mm/yy',
+                  iconSection: CupertinoIcons.calendar),
+              Gap(22),
+              DateTimeWidget(
+                  titleText: 'Time',
+                  valueText: 'hh : mm',
+                  iconSection: CupertinoIcons.clock),
+            ],
+          ),
+
+          //Button Section
+          const Gap(12),
+          Row(
+            children: [
+              Expanded(
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.blue.shade800,
+                    elevation: 0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    side: BorderSide(color: Colors.blue.shade800),
+                  ),
+                  onPressed: () {},
+                  child: const Text('Cancel'),
+                ),
+              ),
+              const Gap(20),
+              Expanded(
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue.shade800,
+                    foregroundColor: Colors.white,
+                    elevation: 0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    side: BorderSide(color: Colors.blue.shade800),
+                  ),
+                  onPressed: () {},
+                  child: const Text('Create'),
+                ),
+              ),
             ],
           )
         ],
