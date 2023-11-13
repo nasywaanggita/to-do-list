@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:todo_list/common/show_model.dart';
 
 void main() {
   runApp(
@@ -88,17 +89,12 @@ class HomePage extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8))),
                     onPressed: () => showModalBottomSheet(
-                        isScrollControlled: true,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16)),
-                        context: context,
-                        builder: (context) => Container(
-                              height: MediaQuery.of(context).size.height * 0.85,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                            )),
+                          isScrollControlled: true,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16)),
+                          context: context,
+                          builder: (context) => const AddNewTaskModel(),
+                        ),
                     child: Text('+ New Task'))
               ],
             )
