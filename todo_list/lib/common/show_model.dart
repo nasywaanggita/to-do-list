@@ -45,6 +45,14 @@ class AddNewTaskModel extends StatelessWidget {
             style: AppStyle.headingOne,
           ),
           const Gap(6),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 12),
+            decoration: BoxDecoration(
+              color: Colors.grey.shade200,
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: const TextField(),
+          ),
           const TextFieldWidget(maxLine: 1, hintText: 'Add Task Name'),
           const Gap(12),
           const Text('Description', style: AppStyle.headingOne),
@@ -59,33 +67,38 @@ class AddNewTaskModel extends StatelessWidget {
               ),
               Expanded(
                 child: RadioWidget(
-                    categColor: Colors.blue.shade700, titleRadio: 'WRK'),
+                  categColor: Colors.blue.shade700,
+                  titleRadio: 'WRK',
+                ),
               ),
               Expanded(
                 child: RadioWidget(
-                    categColor: Colors.amberAccent.shade700, titleRadio: 'GEN'),
+                  categColor: Colors.amberAccent.shade700,
+                  titleRadio: 'GEN',
+                ),
               ),
             ],
           ),
 
-          //Date time Section
-
+          // Date time Section
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               DateTimeWidget(
-                  titleText: 'Date',
-                  valueText: 'dd//mm/yy',
-                  iconSection: CupertinoIcons.calendar),
+                titleText: 'Date',
+                valueText: 'dd//mm/yy',
+                iconSection: CupertinoIcons.calendar,
+              ),
               Gap(22),
               DateTimeWidget(
-                  titleText: 'Time',
-                  valueText: 'hh : mm',
-                  iconSection: CupertinoIcons.clock),
+                titleText: 'Time',
+                valueText: 'hh : mm',
+                iconSection: CupertinoIcons.clock,
+              ),
             ],
           ),
 
-          //Button Section
+          // Button Section
           const Gap(12),
           Row(
             children: [
@@ -121,7 +134,28 @@ class AddNewTaskModel extends StatelessWidget {
                 ),
               ),
             ],
-          )
+          ),
+          Container(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text('Date', style: AppStyle.headingOne),
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade200,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Row(
+                    children: const [
+                      Icon(CupertinoIcons.calendar),
+                      Gap(12),
+                      Text('dd/mm/yy'),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );

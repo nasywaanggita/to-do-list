@@ -28,7 +28,7 @@ class HomePage extends StatelessWidget {
           leading: CircleAvatar(
             backgroundColor: Colors.amber.shade200,
             radius: 25,
-            child: Image.asset('./assets/profil.png'),
+            child: Image.asset('>assets/profil.png'),
           ),
           title: const Text(
             'Hello, We Are',
@@ -58,48 +58,55 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: SingleChildScrollView(
-          child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 30),
-        child: Column(
-          children: [
-            const Gap(20),
-            Row(
-              children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Today\'s Task',
-                      style: TextStyle(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30),
+          child: Column(
+            children: [
+              const Gap(20),
+              Row(
+                children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Today\'s Task',
+                        style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: Colors.black),
-                    ),
-                    Text(
-                      'Wednesday, 11 May',
-                      style: TextStyle(color: Colors.grey),
-                    ),
-                  ],
-                ),
-                ElevatedButton(
+                          color: Colors.black,
+                        ),
+                      ),
+                      Text(
+                        'Wednesday, 11 May',
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                    ],
+                  ),
+                  ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFFD5E8FA),
-                        foregroundColor: Colors.blue.shade800,
-                        elevation: 0,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8))),
+                      backgroundColor: const Color(0xFFD5E8FA),
+                      foregroundColor: Colors.blue.shade800,
+                      elevation: 0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
                     onPressed: () => showModalBottomSheet(
-                        isScrollControlled: true,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16)),
-                        context: context,
-                        builder: (context) => AddNewTaskModel()),
-                    child: Text('+ New Task'))
-              ],
-            )
-          ],
+                      isScrollControlled: true,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      context: context,
+                      builder: (context) => const AddNewTaskModel(),
+                    ),
+                    child: Text('+ New Task'),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
-      )),
+      ),
     );
   }
 }
