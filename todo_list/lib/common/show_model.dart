@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_list/constants/app_style.dart';
+import 'package:gap/gap.dart';
 
 class AddNewTaskModel extends StatelessWidget {
   const AddNewTaskModel({
@@ -34,12 +35,19 @@ class AddNewTaskModel extends StatelessWidget {
             thickness: 1.2,
             color: Colors.grey.shade200,
           ),
-          SizedBox(height: 12),
-          Text(
+          const Gap(12),
+          const Text(
             'Title Task',
             style: AppStyle.headingOne,
           ),
-          TextField(),
+          const Gap(6),
+          Container(
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              decoration: BoxDecoration(
+                color: Colors.grey.shade200,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: const TextField()),
         ],
       ),
     );
